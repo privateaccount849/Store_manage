@@ -14,6 +14,5 @@ namespace QLK
         public string AId { get; set; }
         public string CId { get; set; }
         public string EId { get; set; }
-
     }
 }
