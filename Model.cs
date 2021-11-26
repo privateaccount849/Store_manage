@@ -20,6 +20,7 @@ namespace QLK
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = GetConnection();
             cmd.Connection.Open();
+
             cmd.CommandText = "Insert into tblStore values(@id,@n,@p,@a, @ca, @em)";
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@n", name);
@@ -61,6 +62,67 @@ namespace QLK
             cmd.Parameters.AddWithValue("@em", em_id);
             int r = cmd.ExecuteNonQuery();
             cmd.Connection.Close();
+            return r > 0;
+        }
+        public bool AddData1(string Eid, string En, string P, string dob, string ad)
+        {
+            SqlCommand cmdE = new SqlCommand();
+            cmdE.Connection = GetConnection();
+            cmdE.Connection.Open();
+
+            cmdE.CommandText = "Insert into tblEm1 values(@EmployeeID,@EmployeeName,@Phone,@DateofBirth,@Address)";
+            cmdE.Parameters.AddWithValue("@EmployeeID", Eid);
+            cmdE.Parameters.AddWithValue("@EmployeeName", En);
+            cmdE.Parameters.AddWithValue("@Phone", P);
+            cmdE.Parameters.AddWithValue("@DateofBirth", dob);
+            cmdE.Parameters.AddWithValue("@Address", ad);
+            int r = cmdE.ExecuteNonQuery();
+            cmdE.Connection.Close();
+            return r > 0;
+        }
+        public bool UpDateData1(string Eid, string En, string P, string dob, string ad)
+        {
+            SqlCommand cmdE = new SqlCommand();
+            cmdE.Connection = GetConnection();
+            cmdE.Connection.Open();
+            cmdE.CommandText = "Update tblEm1 set En = @EmployeeName, P = @Phone, dob = @DateofBirth, ad = @Address where EmployeeID = @Eid";
+            cmdE.Parameters.AddWithValue("@EmployeeID", Eid);
+            cmdE.Parameters.AddWithValue("@EmployeeName", En);
+            cmdE.Parameters.AddWithValue("@Phone", P);
+            cmdE.Parameters.AddWithValue("@DateofBirth", dob);
+            cmdE.Parameters.AddWithValue("@Address", ad);
+            int r = cmdE.ExecuteNonQuery();
+            cmdE.Connection.Close();
+            return r > 0;
+        }
+        public bool DeleteData1(string Eid, string En, string P, string dob, string ad)
+        {
+            SqlCommand cmdE = new SqlCommand();
+            cmdE.Connection = GetConnection();
+            cmdE.Connection.Open();
+            cmdE.CommandText = "Delete from tblEm1 where EmployeeID = Eid";
+            cmdE.Parameters.AddWithValue("@EmployeeID", Eid);
+            cmdE.Parameters.AddWithValue("@EmployeeName", En);
+            cmdE.Parameters.AddWithValue("@Phone", P);
+            cmdE.Parameters.AddWithValue("@DateofBirth", dob);
+            cmdE.Parameters.AddWithValue("@Address", ad);
+            int r = cmdE.ExecuteNonQuery();
+            cmdE.Connection.Close();
+            return r > 0;
+        }
+        public bool AddData3(string BillID, string Type, string Date, string EmployeeID, string StoreID)
+        {
+            SqlCommand cmdE = new SqlCommand();
+            cmdE.Connection = GetConnection();
+            cmdE.Connection.Open();
+            cmdE.CommandText = "Insert into tblBill values(@BillID,@Type,@Date,@EmployeeID,@StoreID)";
+            cmdE.Parameters.AddWithValue("@BillID", BillID);
+            cmdE.Parameters.AddWithValue("@Type", Type);
+            cmdE.Parameters.AddWithValue("@Date", Date);
+            cmdE.Parameters.AddWithValue("@EmployeeID", EmployeeID);
+            cmdE.Parameters.AddWithValue("@Store", StoreID);
+            int r = cmdE.ExecuteNonQuery();
+            cmdE.Connection.Close();
             return r > 0;
         }
     }

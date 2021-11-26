@@ -2,9 +2,12 @@ C:\C#_Project\QLK\bin\Debug\QLK.exe.config
 C:\C#_Project\QLK\bin\Debug\QLK.exe
 C:\C#_Project\QLK\bin\Debug\QLK.pdb
 C:\C#_Project\QLK\obj\Debug\QLK.csproj.AssemblyReference.cache
-C:\C#_Project\QLK\obj\Debug\QLK.Form1.resources
 C:\C#_Project\QLK\obj\Debug\QLK.Properties.Resources.resources
 C:\C#_Project\QLK\obj\Debug\QLK.csproj.GenerateResource.cache
 C:\C#_Project\QLK\obj\Debug\QLK.csproj.CoreCompileInputs.cache
 C:\C#_Project\QLK\obj\Debug\QLK.exe
 C:\C#_Project\QLK\obj\Debug\QLK.pdb
+C:\C#_Project\QLK\obj\Debug\QLK.Store.resources
+C:\C#_Project\QLK\obj\Debug\QLK.FrmEmployee.resources
+C:\C#_Project\QLK\obj\Debug\QLK.FrmMain.resources
+C:\C#_Project\QLK\obj\Debug\QLK.FrmBill.resources
